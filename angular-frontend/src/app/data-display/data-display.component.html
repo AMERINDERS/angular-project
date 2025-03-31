@@ -1,0 +1,20 @@
+
+<h1>Authors Database</h1>
+<div class="table-container">
+  <table *ngIf="data && data.length > 0">
+    <thead>
+      <tr>
+        <th>Author Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let author of data">
+        <td>{{ author['First Name'] }} {{ author['Last Name'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+    
+  <div *ngIf="!data || data.length === 0" class="no-data">
+    No author data available.
+  </div>
+</div>
