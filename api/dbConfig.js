@@ -1,5 +1,5 @@
 const config = {
-    server: 'AMYTUF',    // Your SQL Server instance
+    server: 'ON44C03431532\\MSSQLSERVER02',    // Your SQL Server instance
     database: 'pubs',    // Your database name
     driver: 'msnodesqlv8', // Tell mssql to use the msnodesqlv8 driver
     options: {
@@ -10,7 +10,7 @@ const config = {
   };
   
   module.exports = config;
-  const connectionString = "Driver={SQL Server Native Client 11.0};Server=AMYTUF;Database=pubs;Trusted_Connection=Yes;Encrypt=no;TrustServerCertificate=yes;";
+  const connectionString = "Driver={SQL Server Native Client 11.0};Server=ON44C03431532\\MSSQLSERVER02;Database=pubs;Trusted_Connection=Yes;Encrypt=no;TrustServerCertificate=yes;";
   module.exports = connectionString;
     
   
