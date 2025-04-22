@@ -1,2 +1,7 @@
 <h2>Authors Data</h2>
-<pre>{{ data | json }}</pre>
+<div class="mb-3">
+  <a routerLink="/authors/create" class="btn btn-primary">+ Create New Author</a>
+</div>
+<div *ngFor="let author of data">
+    <a [routerLink]="['/authors/'+author.au_id]">{{ author.au_fname }} {{ author.au_lname }}</a>
+  </div>

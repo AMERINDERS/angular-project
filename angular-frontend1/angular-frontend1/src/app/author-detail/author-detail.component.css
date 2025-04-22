@@ -1,0 +1,184 @@
+/* author-detail.component.css */
+
+h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* View mode styling */
+  p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  p strong {
+    font-weight: 600;
+    color: #555;
+    display: inline-block;
+    width: 100px;
+  }
+  
+  /* Button styling */
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    transition: background-color 0.2s;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #0d6efd;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0b5ed7;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5c636a;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #bb2d3b;
+  }
+  
+  .btn-success {
+    background-color: #198754;
+    color: white;
+  }
+  
+  .btn-success:hover {
+    background-color: #157347;
+  }
+  
+  .btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+  
+  /* Delete button specific positioning */
+  button.btn-danger {
+    margin-top: 1rem;
+  }
+  
+  /* Form styling */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+  
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 0.5rem;
+  }
+  
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 0.5rem;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+    margin-bottom: 0.125rem;
+  }
+  
+  .form-check-input {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.25rem;
+    vertical-align: top;
+    margin-left: -1.5rem;
+  }
+  
+  .form-check-label {
+    margin-bottom: 0;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
+  .ml-2 {
+    margin-left: 0.5rem;
+  }
+  
+  /* Loading template */
+  ng-template p {
+    color: #6c757d;
+    font-style: italic;
+  }
+  
+  /* Container styling (matching the data-display component) */
+  :host {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }

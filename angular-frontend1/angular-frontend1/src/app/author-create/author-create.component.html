@@ -1,0 +1,82 @@
+<div class="container mt-4">
+    <h2>Create New Author</h2>
+  
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+  
+    <form [formGroup]="authorForm" (ngSubmit)="onSubmit()">
+      <div class="form-group mb-3">
+        <label for="au_id">Author ID (SSN format: 123-45-6789):</label>
+        <input type="text" id="au_id" formControlName="au_id" class="form-control">
+        <div class="text-danger" *ngIf="isFieldInvalid('au_id')">
+          {{ getErrorMessage('au_id') }}
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="au_fname">First Name:</label>
+        <input type="text" id="au_fname" formControlName="au_fname" class="form-control">
+        <div class="text-danger" *ngIf="isFieldInvalid('au_fname')">
+          {{ getErrorMessage('au_fname') }}
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="au_lname">Last Name:</label>
+        <input type="text" id="au_lname" formControlName="au_lname" class="form-control">
+        <div class="text-danger" *ngIf="isFieldInvalid('au_lname')">
+          {{ getErrorMessage('au_lname') }}
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="phone">Phone (format: 123 456-7890):</label>
+        <input type="text" id="phone" formControlName="phone" class="form-control">
+        <div class="text-danger" *ngIf="isFieldInvalid('phone')">
+          {{ getErrorMessage('phone') }}
+        </div>
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="address">Address:</label>
+        <input type="text" id="address" formControlName="address" class="form-control">
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" formControlName="city" class="form-control">
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" formControlName="state" class="form-control">
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="zip">ZIP:</label>
+            <input type="text" id="zip" formControlName="zip" class="form-control">
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-check mb-3">
+        <input type="checkbox" id="contract" formControlName="contract" class="form-check-input">
+        <label for="contract" class="form-check-label">Has Contract</label>
+      </div>
+      
+      <div class="mb-3">
+        <button type="submit" [disabled]="isSubmitting" class="btn btn-success me-2">
+          <span *ngIf="isSubmitting">Creating...</span>
+          <span *ngIf="!isSubmitting">Create Author</span>
+        </button>
+        <a routerLink="/" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>

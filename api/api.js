@@ -28,6 +28,15 @@ app.get('/api/authors', async (req, res) => {
   }
 });
 
+app.get('/api/titles',async(req,res)=>{
+  try{
+    const result = await dboperations.getBooks();
+    res.status(200).json(result);
+  }catch(error){
+    res.status(500).json ({error: error.message});
+  }
+});
+
 app.get('/api/authors/:id', async (req, res) => {
   const { id } = req.params;
   try {
@@ -35,6 +44,17 @@ app.get('/api/authors/:id', async (req, res) => {
     res.status(200).json(author);
   } catch (error) {
     res.status(404).json({ error: error.message });
+  }
+});
+
+app.get('/api/titles/:id',async(req,res)=>{
+  const {id}=req.params;
+  try{
+    const book= await dboperations.getBook(id);
+    res.status(200).json(book);
+    
+  }catch(error){
+    res.status(404).json({error:error.message});
   }
 });
 
@@ -51,6 +71,20 @@ app.put('/api/authors/:id', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.put('/api/titles/:id',async (req,res)=>{
+  const {id}= req.params;
+  const updatedData=req.body ;
+  console.log("Request body: ", updatedData);
+  console.log("Title ID:", id); 
+  try {
+    const result = await dboperations.updateTitle(id, updatedData);
+    res.status(200).json({ message: "Title updated successfully", result });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+})
+
 
 // Create new author endpoint
 app.post('/api/authors', async (req, res) => {
