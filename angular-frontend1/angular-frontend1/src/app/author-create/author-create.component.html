@@ -6,27 +6,21 @@
     </div>
   
     <form [formGroup]="authorForm" (ngSubmit)="onSubmit()">
-      <div class="form-group mb-3">
-        <label for="au_id">Author ID (SSN format: 123-45-6789):</label>
-        <input type="text" id="au_id" formControlName="au_id" class="form-control">
-        <div class="text-danger" *ngIf="isFieldInvalid('au_id')">
-          {{ getErrorMessage('au_id') }}
-        </div>
-      </div>
+    
       
       <div class="form-group mb-3">
-        <label for="au_fname">First Name:</label>
-        <input type="text" id="au_fname" formControlName="au_fname" class="form-control">
-        <div class="text-danger" *ngIf="isFieldInvalid('au_fname')">
+        <label for="auFname">First Name:</label>
+        <input type="text" id="auFname" formControlName="auFname" class="form-control">
+        <div class="text-danger" *ngIf="isFieldInvalid('auFname')">
           {{ getErrorMessage('au_fname') }}
         </div>
       </div>
       
       <div class="form-group mb-3">
-        <label for="au_lname">Last Name:</label>
-        <input type="text" id="au_lname" formControlName="au_lname" class="form-control">
-        <div class="text-danger" *ngIf="isFieldInvalid('au_lname')">
-          {{ getErrorMessage('au_lname') }}
+        <label for="auLname">Last Name:</label>
+        <input type="text" id="auLname" formControlName="auLname" class="form-control">
+        <div class="text-danger" *ngIf="isFieldInvalid('auLname')">
+          {{ getErrorMessage('auLname') }}
         </div>
       </div>
       

@@ -2,6 +2,28 @@
 <div class="mb-3">
   <a routerLink="/authors/create" class="btn btn-primary">+ Create New Author</a>
 </div>
-<div *ngFor="let author of data">
-    <a [routerLink]="['/authors/'+author.au_id]">{{ author.au_fname }} {{ author.au_lname }}</a>
-  </div>
+
+<table class="author-details-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let author of data">
+      <td>
+        <a [routerLink]="['/authors', author.auId]">
+          {{ author.auFname }} {{ author.auLname }}
+        </a>
+      </td>
+      <td>{{ author.phone }}</td>
+      <td>{{ author.address }}</td>
+      <td>{{ author.city }}</td>
+      <td>{{ author.state }}</td>
+    </tr>
+  </tbody>
+</table>

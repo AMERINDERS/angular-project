@@ -22,8 +22,8 @@ export class AuthorDetailComponent implements OnInit {
     private fb: FormBuilder,
   ) {
     this.authorForm = this.fb.group({
-      au_fname: ['', Validators.required],
-      au_lname: ['', Validators.required],
+      auFname: ['', Validators.required],
+      auLname: ['', Validators.required],
       phone: ['', Validators.required],
       address: [''],
       city: [''],
@@ -43,12 +43,12 @@ export class AuthorDetailComponent implements OnInit {
   loadAuthorData(authorId: string): void {
     this.authorService.getAuthorById(authorId).subscribe((data) => {
       console.log('API RESPONSE ', data);
-      this.author = data[0]; // Extract the first author from the array
+      this.author = data; // Extract the first author from the array
       
       // Initialize the form with author data
       this.authorForm.patchValue({
-        au_fname: this.author.au_fname,
-        au_lname: this.author.au_lname,
+        auFname: this.author.auFname,
+        auLname: this.author.auLname,
         phone: this.author.phone,
         address: this.author.address,
         city: this.author.city,
@@ -73,13 +73,13 @@ export class AuthorDetailComponent implements OnInit {
         ...this.authorForm.value
       };
       
-      this.authorService.updateAuthor(this.author.au_id, updatedAuthor).subscribe({
+      this.authorService.updateAuthor(this.author.auId, updatedAuthor).subscribe({
         next: (response) => {
           console.log('Author updated successfully', response);
           this.isSubmitting = false;
           this.editMode = false;
           // Refresh the author data
-          this.loadAuthorData(this.author.au_id);
+          this.loadAuthorData(this.author.auId);
         },
         error: (error) => {
           console.error('Error updating author', error);

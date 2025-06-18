@@ -13,7 +13,7 @@ export class DataDisplayComponent implements OnInit {
  ngOnInit(): void {
    this.dataService.getData().subscribe((data:any)=>{
     this.data=data;
-    console.log(this.data);
+   
    });
    
    

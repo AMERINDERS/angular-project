@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthorService {
 
-  private apiUrl = 'http://localhost:3000/api/authors';
+  private apiUrl = 'https://localhost:7103/api/Authors';
 
   constructor(private http: HttpClient) {
     

@@ -3,7 +3,7 @@
 <div *ngIf="author; else loading">
   <!-- View Mode -->
   <div *ngIf="!editMode">
-    <p><strong>Name:</strong> {{ author.au_fname }} {{ author.au_lname }}</p>
+    <p><strong>Name:</strong> {{ author.auFname }} {{ author.auLname }}</p>
     <p><strong>Phone:</strong> {{ author.phone }}</p>
     <p><strong>Address:</strong> {{ author.address }}, {{ author.city }}, {{ author.state }} - {{ author.zip }}</p>
     <p><strong>Contract:</strong> {{ author.contract ? 'Yes' : 'No' }}</p>
@@ -14,7 +14,7 @@
   <button type="button" 
         class="btn btn-danger" 
         [disabled]="isSubmitting" 
-        (click)="deleteAuthor(author.au_id)">
+        (click)="deleteAuthor(author.auId)">
   Delete Author
 </button>
   
@@ -22,17 +22,17 @@
   <div *ngIf="editMode">
     <form [formGroup]="authorForm" (ngSubmit)="saveChanges()">
       <div class="form-group">
-        <label for="au_fname">First Name:</label>
-        <input type="text" id="au_fname" formControlName="au_fname" class="form-control">
-        <div *ngIf="authorForm.get('au_fname')?.invalid && authorForm.get('au_fname')?.touched" class="text-danger">
+        <label for="auFname">First Name:</label>
+        <input type="text" id="auFname" formControlName="auFname" class="form-control">
+        <div *ngIf="authorForm.get('auFname')?.invalid && authorForm.get('auFname')?.touched" class="text-danger">
           First name is required
         </div>
       </div>
       
       <div class="form-group">
         <label for="au_lname">Last Name:</label>
-        <input type="text" id="au_lname" formControlName="au_lname" class="form-control">
-        <div *ngIf="authorForm.get('au_lname')?.invalid && authorForm.get('au_lname')?.touched" class="text-danger">
+        <input type="text" id="auLname" formControlName="auLname" class="form-control">
+        <div *ngIf="authorForm.get('auLname')?.invalid && authorForm.get('auLname')?.touched" class="text-danger">
           Last name is required
         </div>
       </div>

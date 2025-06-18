@@ -26,9 +26,8 @@ export class AuthorCreateComponent implements OnInit {
 
   initForm(): void {
     this.authorForm = this.fb.group({
-      au_id: ['', [Validators.required, Validators.pattern(/^\d{3}-\d{2}-\d{4}$/)]],
-      au_fname: ['', Validators.required],
-      au_lname: ['', Validators.required],
+      auFname: ['', Validators.required],
+      auLname: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern(/^\d{3} \d{3}-\d{4}$/)]],
       address: [''],
       city: [''],
@@ -71,15 +70,14 @@ export class AuthorCreateComponent implements OnInit {
   }
 
   // Helper method to get field error message
-  getErrorMessage(fieldName: string): string {
-    const control = this.authorForm.get(fieldName);
-    
-    if (!control) return '';
-    if (control.errors?.['required']) return 'This field is required';
-    if (control.errors?.['pattern']) {
-      if (fieldName === 'au_id') return 'Author ID must be in format: 123-45-6789';
-      if (fieldName === 'phone') return 'Phone must be in format: 123 456-7890';
-    }
-    return 'Invalid input';
+getErrorMessage(fieldName: string): string {
+  const control = this.authorForm.get(fieldName);
+
+  if (!control) return '';
+  if (control.errors?.['required']) return 'This field is required';
+  if (control.errors?.['pattern']) {
+    if (fieldName === 'phone') return 'Phone must be in format: 123 456-7890';
   }
+  return 'Invalid input';
+}
 }
